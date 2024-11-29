@@ -594,7 +594,7 @@
           "Sí.",
           "No."
       ],
-      "indices_correctas": [1]
+      "indices_correctas": [0]
   },
   {
       "pregunta": "IV.1 Identifique las categorías de radioaficionados de acuerdo a la nueva reglamentación:",
@@ -1016,7 +1016,7 @@
           "60 días.",
           "90 días."
       ],
-      "indices_correctas": [3]
+      "indices_correctas": [2]
   },
   {
       "pregunta": "X.6 ¿Puede haber en nuestro país Estaciones Repetidoras del Servicio de Radioaficionados con acceso codificado mediante subtonos?",
@@ -1355,7 +1355,7 @@
           "Ser designado por el Radio Club o Institución Autorizada.",
           "Abstenerse de participar en la toma de exámenes a familiares directos de primer grado."
       ],
-      "indices_correctas": [1]
+      "indices_correctas": [1,3]
   },
   {
       "pregunta": "XII.26 ¿El veedor deberá pertenecer al mismo Radio Club o Institución Autorizada que toma el examen?",
@@ -1364,7 +1364,7 @@
           "No.",
           "Indistinto."
       ],
-      "indices_correctas": [2]
+      "indices_correctas": [1]
   },
   {
       "pregunta": "XIII.1 Se consideran infracciones de carácter general:",
