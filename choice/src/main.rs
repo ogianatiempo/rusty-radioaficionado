@@ -70,9 +70,11 @@ fn main() {
 
         match opcion.trim() {
             "1" => {
-                puntaje.tecnica_count += 1;
                 match preguntas_tecnica.pop() {
-                    Some(pregunta) => realizar_pregunta(pregunta, TipoPregunta::Tecnica, &mut puntaje),
+                    Some(pregunta) => {
+                        puntaje.tecnica_count += 1;
+                        realizar_pregunta(pregunta, TipoPregunta::Tecnica, &mut puntaje)
+                    },
                     None => {
                         println!("No hay más preguntas de técnica");
                         std::thread::sleep(std::time::Duration::from_secs(2));
@@ -81,9 +83,12 @@ fn main() {
                 }                
             },
             "2" => {
-                puntaje.reglamento_count += 1;
+                
                 match preguntas_reglamento.pop() {
-                    Some(pregunta) => realizar_pregunta(pregunta, TipoPregunta::Reglamento, &mut puntaje),
+                    Some(pregunta) => {
+                        puntaje.reglamento_count += 1;
+                        realizar_pregunta(pregunta, TipoPregunta::Reglamento, &mut puntaje)
+                    },
                     None => {
                         println!("No hay más preguntas de reglamento");
                         std::thread::sleep(std::time::Duration::from_secs(2));
