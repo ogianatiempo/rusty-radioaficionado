@@ -440,28 +440,19 @@
       "opciones": [
           "Reglamento General de Radioaficionados - Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU). Reglamentación UIT.",
           "Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU). Reglamento General de Radioaficionados, y Reglamentación UIT.",
-          "Reglamentación UIT, Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU), y Reglamento General de Radioaficionados."
+          "Reglamentación UIT, Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU).y Reglamento General de Radioaficionados."
       ],
-      "indices_correctas": [2]
+      "indices_correctas": [0]
   },
   {
-          "pregunta": "I.47 ¿Qué orden de observancia tiene la siguiente reglamentación para los Radioaficionados de la República Argentina?",
-          "opciones": [
-              "Reglamento General de Radioaficionados - Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU). Reglamentación UIT.",
-              "Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU). Reglamento General de Radioaficionados, y Reglamentación UIT.",
-              "Reglamentación UIT, Disposiciones, recomendaciones y procedimientos de la Unión Internacional de Radioaficionados (IARU).y Reglamento General de Radioaficionados."
-          ],
-          "indices_correctas": [0]
-      },
-      {
-          "pregunta": "II.1 Son facultades de la Autoridad de Aplicación:",
-          "opciones": [
-              "Limitar, denegar, suspender o cancelar la licencia de Radioaficionado.",
-          "Asignar o modificar las señales distintivas.",
-          "Tomar exámenes de ingreso y ascenso de categorías.",
-          "Dictar cursos y fomentar la actividad a través de Prácticas Operativas."
-      ],
-      "indices_correctas": [0, 1]
+      "pregunta": "II.1 Son facultades de la Autoridad de Aplicación:",
+      "opciones": [
+          "Limitar, denegar, suspender o cancelar la licencia de Radioaficionado.",
+      "Asignar o modificar las señales distintivas.",
+      "Tomar exámenes de ingreso y ascenso de categorías.",
+      "Dictar cursos y fomentar la actividad a través de Prácticas Operativas."
+    ],
+    "indices_correctas": [0, 1]
   },
   {
       "pregunta": "III.1 ¿Qué categoría se le otorga a los Radio Clubes, Instituciones Autorizadas e Instituciones Reconocidas?",
