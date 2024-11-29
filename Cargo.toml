@@ -1,0 +1,3 @@
+[workspace]
+
+members = [ "cw-comunicado", "cw-letras", "choice"]
