@@ -1044,7 +1044,7 @@
           "30 días corridos.",
           "60 días corridos."
       ],
-      "indices_correctas": [1]
+      "indices_correctas": [0]
   },
   {
       "pregunta": "X.9 ¿Ante qué casos caducará la autorización de una Estación Repetidora?",
