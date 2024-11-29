@@ -132,9 +132,9 @@ fn realizar_pregunta(question: Pregunta, tipo: TipoPregunta, puntaje: &mut Punta
         std::thread::sleep(std::time::Duration::from_secs(1));
     } else {
         if question.indices_correctas.len() == 1 {
-            println!("Incorrecto! La respuesta correcta era: {}", question.indices_correctas.iter().next().unwrap());
+            println!("Incorrecto! La respuesta correcta era: {}", question.indices_correctas.iter().next().unwrap() + 1);
         } else {
-            println!("Incorrecto! La respuestas correctas eran: {:?}", question.indices_correctas);
+            println!("Incorrecto! La respuestas correctas eran: {:?}", question.indices_correctas.iter().map(|i| i + 1).collect::<Vec<usize>>());
         }
         std::thread::sleep(std::time::Duration::from_secs(2));
     }
