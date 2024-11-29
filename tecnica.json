@@ -96,7 +96,7 @@
     },
     {
         "pregunta": "¿Qué elemento de los señalados, permite elevar por si solo, una tensión alterna?",
-        "opciones": ["Resistencia", "Transormador", "Diodo", "Impedancia"],
+        "opciones": ["Resistencia", "Transformador", "Diodo", "Impedancia"],
         "indices_correctas": [ 1 ]
     },
     {
@@ -675,7 +675,7 @@
     {
         "pregunta": "Si una estación en la banda de 80 metros llega con muy buena señal, ¿qué señal le daría?",
         "opciones": ["S-3 + 9 dB", "S-9 + 20 dB", "S-20 + 9 dB", "S-3"],
-        "indices_correctas": [ 2 ]
+        "indices_correctas": [ 1 ]
     },
     {
         "pregunta": "En el símbolo de la batería, la línea mas corta , ¿qué terminal indica?",
