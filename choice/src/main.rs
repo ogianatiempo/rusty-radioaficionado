@@ -1,5 +1,6 @@
 use std::fs;
 use std::io::{self, Write};
+use std::collections::HashSet;
 use serde::Deserialize;
 use rand::seq::SliceRandom;
 use crossterm::{
@@ -15,7 +16,7 @@ enum TipoPregunta {
 struct Pregunta {
     pregunta: String,
     opciones: Vec<String>,
-    indice_correcta: usize,
+    indices_correctas: HashSet<usize>,
 }
 
 struct Puntaje {
@@ -116,20 +117,25 @@ fn realizar_pregunta(question: Pregunta, tipo: TipoPregunta, puntaje: &mut Punta
     io::stdout().flush().unwrap();
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
-    if let Ok(answer) = input.trim().parse::<usize>() {
-        if answer - 1 == question.indice_correcta {
-            println!("Correcto!");
-            match tipo {
-                TipoPregunta::Tecnica => puntaje.tecnica_score += 1,
-                TipoPregunta::Reglamento => puntaje.reglamento_score += 1
-            }
-            std::thread::sleep(std::time::Duration::from_secs(1));
-        } else {
-            println!("Incorrecto! La respuesta era: {}", question.opciones[question.indice_correcta]);
-            std::thread::sleep(std::time::Duration::from_secs(2));
+    let answer: HashSet<usize> = input
+        .split(',')
+        .filter_map(|s| s.trim().parse::<usize>().ok())  // Only keep valid numbers
+        .map(|i| i - 1)
+        .collect();
+    
+    if answer == question.indices_correctas {
+        println!("Correcto!");
+        match tipo {
+            TipoPregunta::Tecnica => puntaje.tecnica_score += 1,
+            TipoPregunta::Reglamento => puntaje.reglamento_score += 1
         }
-    } else {
-        println!("Opción inválida.");
         std::thread::sleep(std::time::Duration::from_secs(1));
-    };
+    } else {
+        if question.indices_correctas.len() == 1 {
+            println!("Incorrecto! La respuesta correcta era: {}", question.indices_correctas.iter().next().unwrap());
+        } else {
+            println!("Incorrecto! La respuestas correctas eran: {:?}", question.indices_correctas);
+        }
+        std::thread::sleep(std::time::Duration::from_secs(2));
+    }
 }
