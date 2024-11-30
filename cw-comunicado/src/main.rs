@@ -1,17 +1,38 @@
 use std::collections::HashMap;
 use std::io;
+use rand::seq::SliceRandom; // Importa `choose`
+use rand::thread_rng;       // Generador de números aleatorios
 
 fn main() {
-    let comunicado = vec![
-        "CQ CQ DE LW9DVR LW9DVR K",
-        "LW9DVR DE LU8DMA KN",
-        "LU8DMA DE LW9DVR RST",
-        "599 DNN DNN QTH LOMAS KN",
-        "R R LW9DVR DE LU8DMA",
+    let comunicados = vec![
+        vec![
+            "CQ CQ DE LW9DVR LW9DVR K",
+            "LW9DVR DE LU8DMA KN",
+            "LU8DMA DE LW9DVR RST",
+            "599 DNN DNN QTH LOMAS KN",
+            "R R LW9DVR DE LU8DMA",
+        ],
+        vec![
+            "CQ CQ DE LU1XYZ LU1XYZ K",
+            "LU1XYZ DE LU5ABC RST 599 QSL?",
+            "QSL R LU5ABC DE LU1XYZ TU 73",
+            "QRZ? DE LU2JKL",
+            "LU2JKL DE LW8OPR KN",
+        ],
+        vec![
+            "QRV? DE LU3DEF",
+            "LU3DEF DE LW7GHI QRS PSE",
+            "QRS R LU3DEF DE LW7GHI TU",
+            "CQ DX DE LU4JKL",
+            "LU4JKL DE LU6MNO PSE K",
+        ],
     ];
 
+    // Selección aleatoria
+    let comunicado = comunicados.choose(&mut thread_rng()).unwrap();
+
     println!("Comunicado:");
-    for line in &comunicado {
+    for line in comunicado {
         println!("{}", line);
     }
 
@@ -111,5 +132,15 @@ fn morse_code_table() -> HashMap<char, &'static str> {
     table.insert('9', "----.");
     table.insert('0', "-----");
     table.insert(' ', "/"); // Separador de palabras
+    table.insert('.', ".-.-.-"); // Punto
+    table.insert(',', "--..--"); // Coma
+    table.insert('?', "..--.."); // Signo de pregunta
+    table.insert('!', "-.-.--"); // Signo de exclamación
+    table.insert('-', "-....-"); // Guion
+    table.insert('/', "-..-.");  // Barra
+    table.insert('(', "-.--.");  // Paréntesis abierto
+    table.insert(')', "-.--.-"); // Paréntesis cerrado
+    table.insert('@', ".--.-."); // Arroba
+    table.insert('=', "-...-");  // Signo igual
     table
 }
